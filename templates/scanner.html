@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="hero">
+  <h1 class="main-title">Scanner</h1>
+  <p class="tagline">Devices discovered on your network.</p>
+
+  <button id="scanBtn" class="cta-button" onclick="startScan()">🔍 Scan Now</button>
+  <span id="scan-status" style="margin-left: 1rem; font-weight: bold; color: #2a9d8f;"></span>
+</header>
+
+<section class="card">
+  {% if results and results|length > 0 %}
+  <input type="text" id="searchInput" onkeyup="filterTable()" placeholder="🔍 Search..." class="search-bar" />
+
+  <table class="scan-table" id="scanTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Type</th>
+        <th>IP</th>
+        <th>MAC</th>
+        <th>VLAN</th>
+        <th>Location</th>
+        <th>Status</th>
+        <th>Scan Time</th>
+      </tr>
+    </thead>
+    <tbody id="scanTableBody">
+      {% for row in results %}
+      <tr>
+        <td>{{ row[0] or "—" }}</td>
+        <td>{{ row[1] or "—" }}</td>
+        <td>{{ row[2] }}</td>
+        <td>{{ row[3] or "—" }}</td>
+        <td>{{ row[4] or "—" }}</td>
+        <td>{{ row[5] or "—" }}</td>
+        <td>
+          {% if row[6] == 'online' %}
+            <span class="status status-online">🟢 Online</span>
+          {% else %}
+            <span class="status status-offline">🔴 Offline</span>
+          {% endif %}
+        </td>
+        <td>{{ row[7] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="empty-message">No devices have been scanned yet. Run a scan to populate this table.</p>
+  {% endif %}
+</section>
+{% endblock %}
