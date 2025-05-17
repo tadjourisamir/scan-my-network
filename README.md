@@ -63,7 +63,7 @@ scan-my-network/
 
 ## 🛠️ Technologies Used
 
-- 🐍 Python 3.11  
+- 🐍 Python 
 - 🌐 Flask  
 - 🧰 Scapy  
 - 🗄 SQLite  
