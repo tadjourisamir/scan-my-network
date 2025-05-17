@@ -47,13 +47,15 @@ scan-my-network/
 ├── config/
 │   └── version.py
 ├── static/
+    ├── script.js
+    ├── logo.png
 │   └── style.css
 ├── templates/
 │   ├── index.html
+    ├── base.html
 │   └── scanner.html
 ├── requirements.txt
-├── .env.example
-├── Dockerfile
+├── LICENSE
 └── README.md
 ```
 
