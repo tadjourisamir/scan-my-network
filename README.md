@@ -1,8 +1,8 @@
-# 🔍 Scan My Network
+<img width="361" height="212" alt="scan" src="https://github.com/user-attachments/assets/36bb6cfa-463f-4dc7-a748-3da26fd5a1b3" />
 
-A lightweight web app built with Flask, Scapy, and SQLite to scan your local network and display connected devices in real time.
+ # Scan-my-network – Lightweight Network Scanner Dashboard
 
----
+**A lightweight web app built with Flask, Scapy, and SQLite to scan your local network and display connected devices in real time.**
 
 ## ⚙️ Features
 
